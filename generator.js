@@ -74,6 +74,7 @@ module.exports = (api, options, rootOptions) => {
     '.gitignore': './templates/mobile/.gitignore',
     '.eslintignore': './templates/mobile/.eslintignore',
     '.nvmrc': './templates/mobile/.nvmrc',
+    '.postcssrc': './templates/mobile/.postcssrc.js',
   })
   api.postProcessFiles((files) => {
     delete files['src/components/HelloWorld.vue']

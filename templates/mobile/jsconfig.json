@@ -1,0 +1,24 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@views/*": ["src/views/*"],
+      "@store/*": ["src/store/*"],
+      "@assets/*": ["src/assets/*"],
+      "@router/*": ["src/router/*"],
+      "@utils/*": ["src/utils/*"],
+      "@service/*": ["src/service/*"],
+      "@api/*": ["src/api/*"],
+      "@components/*": ["src/components/*"],
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+  ]
+}

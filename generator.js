@@ -39,6 +39,7 @@ module.exports = (api, options, rootOptions) => {
       "postcss-px-to-viewport": "^1.1.1",
       "postcss-viewport-units": "^0.1.6",
       "postcss-write-svg": "^3.0.1",
+      "postcss-import": "^12.0.1",
       "less": "^3.0.4",
       "less-loader": "^5.0.0",
       "lint-staged": "^9.5.0",

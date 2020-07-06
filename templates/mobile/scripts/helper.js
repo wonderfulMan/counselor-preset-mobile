@@ -10,7 +10,7 @@ exports.checkEnv = function(vars) {
     vars.forEach(v => {
       if (!process.env[v]) {
         console.error(
-          `请在根目录定义.env.development.loacl文件定义${vars.join("")}变量`
+          `请在根目录定义.env.development.local文件定义${vars.join("")}变量`
         );
         process.exit(1);
       }

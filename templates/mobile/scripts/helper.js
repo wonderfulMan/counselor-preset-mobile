@@ -78,11 +78,12 @@ exports.addImageMinPlugins = function(chain) {
       }
     ]);
 };
-exports.addPxToVw = function (chain) {
+exports.addPxToVw = function(chain) {
   chain.module
-    .rule('counselor-px-to-vw-loader')
-    .test(/\.js$/)
-    .exclude
-    .add(/node_modules/)
-    .loader('counselor-px-to-vw-loader')
-}
+    .rule("px-to-vw")
+    .test(/\.(js|vue|css)$/)
+    .exclude.add(/node_modules/)
+    .end()
+    .use("counselor-px-to-vw-loader")
+    .loader("counselor-px-to-vw-loader");
+};

@@ -21,7 +21,7 @@ exports.checkEnv = function(vars) {
 exports.addAlias = function(chain) {
   chain.resolve.alias
     .set("@", exports.resolve("../src"))
-    .set("@views", exports.resolve("../src/views"))
+    .set("@pages", exports.resolve("../src/pages"))
     .set("@store", exports.resolve("../src/store"))
     .set("@assets", exports.resolve("../src/assets"))
     .set("@router", exports.resolve("../src/router"))
@@ -82,7 +82,7 @@ exports.addPxToVw = function(chain) {
   chain.module
     .rule("px-to-vw")
     .test(/\.(js|vue|css)$/)
-    .include.add(/counselor-cat-frameset\/src/)
+    .include.add(/counselor-cat-frameset/src/)
     .end()
     .use("counselor-px-to-vw-loader")
     .loader("counselor-px-to-vw-loader");

@@ -82,7 +82,7 @@ exports.addPxToVw = function(chain) {
   chain.module
     .rule("px-to-vw")
     .test(/\.(js|vue|css)$/)
-    .include.add(/counselor-cat-frameset/src/)
+    .include.add(/counselor-cat-frameset(\\|\/)src/)
     .end()
     .use("counselor-px-to-vw-loader")
     .loader("counselor-px-to-vw-loader");

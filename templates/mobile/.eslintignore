@@ -1,2 +1,4 @@
 dist
 node_modules
+vue.config.js
+scripts/helper.js

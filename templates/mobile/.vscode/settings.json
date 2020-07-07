@@ -1,0 +1,23 @@
+{
+  "typescript.validate.enable": false, // 关闭vscode对ts文件的lint功能, 由eslint处理
+  "javascript.validate.enable": false, // 关闭vscode对js文件的lint功能, 由eslint处理
+  "css.validate": false, // 关闭vscode对css的lint功能, 由stylelint处理
+  "scss.validate": false, // 关闭vscode对scss的lint功能, 由stylelint处理
+  "less.validate": false, // 关闭vscode对less的lint功能, 由stylelint处理
+  // 让eslint识别vue文件的js
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "jsx",
+    "vue",
+    "html"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true, // 保存时自己格式化js和html
+    "source.fixAll.stylelint": true // 保存时自己格式化css
+  },
+  "vetur.validation.script": false, // 取消vue文件中的js代码的lint, 以便eslint来处理
+  "vetur.format.defaultFormatter.js": "none", // 取消vue文件中的js代码的format, 以便eslint来处理
+  "vetur.validation.template": false, // 取消vue文件中的html代码的lint, 以便eslint来处理
+  "vetur.format.defaultFormatter.html": "none", // 取消vue文件中的html代码的format, 以便eslint来处理
+}

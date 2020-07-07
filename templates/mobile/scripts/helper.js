@@ -21,7 +21,7 @@ exports.checkEnv = function(vars) {
 exports.addAlias = function(chain) {
   chain.resolve.alias
     .set("@", exports.resolve("../src"))
-    .set("@view", exports.resolve("../src/views"))
+    .set("@views", exports.resolve("../src/views"))
     .set("@store", exports.resolve("../src/store"))
     .set("@assets", exports.resolve("../src/assets"))
     .set("@router", exports.resolve("../src/router"))
@@ -48,25 +48,41 @@ exports.addSvgSpriteLoader = function(chain) {
 };
 // 定义本地的.env.development
 exports.addServer = function() {
+  const {
+    VUE_APP_DEV_SERVER_PORT,
+    VUE_APP_DEV_SERVER_TARGET,
+    VUE_APP_DEV_SERVER_MODULE
+  } = process.env;
+  const prefix = "/" + VUE_APP_DEV_SERVER_MODULE;
   return {
-    port: process.env.VUE_APP_DEV_SERVER_PORT,
+    port: VUE_APP_DEV_SERVER_PORT,
     proxy: {
-      "/api": {
+      [prefix]: {
         changeOrigin: true,
-        target: "/wec-counselor-apps",
+        target: `${VUE_APP_DEV_SERVER_TARGET}${prefix}`,
         pathRewrite: { "^/api": "" }
       }
     }
   };
 };
-exports.addImageMinPlugins = function (chain) {
-    chain.plugin
-      .use(require('imagemin-webpack-plugin').default)
-      .options({
+exports.addImageMinPlugins = function(chain) {
+  chain
+    .plugin("imagemin-webpack-plugin")
+    .use(require("imagemin-webpack-plugin").default, [
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        disable: process.env.NODE_ENV !== 'production',
+        disable: process.env.NODE_ENV !== "production",
         pngquant: {
-          quality: '95-100'
+          quality: "95-100"
         }
-      })
+      }
+    ]);
+};
+exports.addPxToVw = function (chain) {
+  chain.module
+    .rule('counselor-px-to-vw-loader')
+    .test(/\.js$/)
+    .exclude
+    .add(/node_modules/)
+    .loader('counselor-px-to-vw-loader')
 }

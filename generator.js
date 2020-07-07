@@ -68,8 +68,7 @@ module.exports = (api, options, rootOptions) => {
 
   api.render('./templates/mobile')
   // 无效
-  api.render('./templates/mobile/.vscode')
-  api.render('./templates/mobile/script')
+  api.render('./templates/mobile/scripts')
   // 上面的方式不能拷贝隐藏文件
   api.render({
     '.browserslistrc': './templates/mobile/.browserslistrc',

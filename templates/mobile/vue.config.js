@@ -3,7 +3,7 @@ const {
   addServer,
   addSvgSpriteLoader,
   checkEnv,
-  addImageCompress
+  addImageMinPlugins
 } = require("./scripts/helper");
 
 checkEnv([
@@ -19,7 +19,7 @@ module.exports = {
     // svg sprite
     addSvgSpriteLoader(chain);
     //  image
-    addImageCompress(chain);
+    addImageMinPlugins(chain);
   },
   devServer: addServer()
 };

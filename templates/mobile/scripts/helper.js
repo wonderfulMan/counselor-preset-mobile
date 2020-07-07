@@ -46,14 +46,6 @@ exports.addSvgSpriteLoader = function(chain) {
     .loader("svg-sprite-loader")
     .options({ symbolId: "icon-[name]" });
 };
-exports.addImageCompress = function(chain) {
-  chain.module
-    .rule("images")
-    .use("image-webpack-loader")
-    .loader("image-webpack-loader")
-    .options({ bypassOnDebug: true })
-    .end();
-};
 // 定义本地的.env.development
 exports.addServer = function() {
   return {
@@ -67,3 +59,14 @@ exports.addServer = function() {
     }
   };
 };
+exports.addImageMinPlugins = function (chain) {
+    chain.plugin
+      .use(require('imagemin-webpack-plugin').default)
+      .options({
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        disable: process.env.NODE_ENV !== 'production',
+        pngquant: {
+          quality: '95-100'
+        }
+      })
+}

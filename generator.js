@@ -35,6 +35,7 @@ module.exports = (api, options, rootOptions) => {
       "eslint-plugin-vue": "^6.2.2",
       "eslint-plugin-zx": "^1.1.0",
       "postcss-url": "^8.0.0",
+      "imagemin-webpack-plugin": "^2.4.2",
       "cssnano-preset-advanced": "^4.0.7",
       "postcss-aspect-ratio-mini": "^1.1.0",
       "postcss-cssnext": "^3.1.0",

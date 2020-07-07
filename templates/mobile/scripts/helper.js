@@ -10,7 +10,7 @@ exports.checkEnv = function(vars) {
     vars.forEach(v => {
       if (!process.env[v]) {
         console.error(
-          `请在根目录定义.env.development.local文件定义${vars.join("")}变量`
+          `请在根目录定义.env.development.local文件定义${vars.join(",")}变量：端口、地址、模块名称`
         );
         process.exit(1);
       }

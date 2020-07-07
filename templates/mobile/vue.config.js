@@ -12,7 +12,11 @@ checkEnv([
   "VUE_APP_DEV_SERVER_TARGET",
   "VUE_APP_DEV_SERVER_MODULE"
 ]);
-
+/**
+ *   VUE_APP_DEV_SERVER_PORT: 8080
+ *   VUE_APP_DEV_SERVER_TARGET: http://102.123.123.123:8080
+ *   VUE_APP_DEV_SERVER_MODULE: 'wec-counselor-apps'
+ */
 module.exports = {
   chainWebpack: chain => {
     // alias

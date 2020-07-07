@@ -34,6 +34,8 @@ module.exports = (api, options, rootOptions) => {
       "eslint-plugin-standard": "^4.0.1",
       "eslint-plugin-vue": "^6.2.2",
       "eslint-plugin-zx": "^1.1.0",
+      "postcss-url": "^8.0.0",
+      "cssnano-preset-advanced": "^4.0.7",
       "postcss-aspect-ratio-mini": "^1.1.0",
       "postcss-cssnext": "^3.1.0",
       "postcss-px-to-viewport": "^1.1.1",

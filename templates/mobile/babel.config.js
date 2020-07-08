@@ -10,6 +10,14 @@ module.exports = {
       },
       "vant"
     ],
+    [
+      "import",
+      {
+        "libraryName": "counselor-mobile-ui",
+        "libraryDirectory": "lib/packages",
+        "camel2DashComponentName": false
+      }
+    ],
     '@babel/plugin-proposal-throw-expressions',
     [
       '@babel/plugin-proposal-pipeline-operator',

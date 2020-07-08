@@ -53,14 +53,11 @@ exports.addServer = function() {
     VUE_APP_DEV_SERVER_TARGET,
     VUE_APP_DEV_SERVER_MODULE
   } = process.env;
-  const prefix = "/" + VUE_APP_DEV_SERVER_MODULE;
   return {
     port: VUE_APP_DEV_SERVER_PORT,
     proxy: {
-      [prefix]: {
-        changeOrigin: true,
-        target: `${VUE_APP_DEV_SERVER_TARGET}${prefix}`,
-        pathRewrite: { "^/api": "" }
+      [VUE_APP_DEV_SERVER_MODULE]: {
+        target: VUE_APP_DEV_SERVER_TARGET,
       }
     }
   };

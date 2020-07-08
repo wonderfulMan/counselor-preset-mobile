@@ -3,7 +3,8 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ["plugin:zx/custom", "standard"],
+  extends: ["@vue/standard", "plugin:vue/custom"],
+  rules: {},
   parserOptions: {
     parser: "babel-eslint"
   },

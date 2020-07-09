@@ -6,9 +6,9 @@ module.exports = (api, options, rootOptions) => {
     ],
     dependencies: {
       "dayjs": "^1.8.29",
-      "counselor-mobile-ui": "*",
+      "counselor-mobile-ui": "latest",
       "lodash-es": "^4.17.15",
-      "vant": "^2.9.0",
+      "vant": "2.9.0",
       "vue": "^2.6.11",
       "vue-router": "^3.2.0",
       "vuex": "^3.4.0"

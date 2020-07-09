@@ -9,8 +9,8 @@
     "lintcss": "stylelint lint"
   },
   "dependencies": {
-    "vant": "^2.9.0",
-    "counselor-mobile-ui": "*",
+    "vant": "2.9.0",
+    "counselor-mobile-ui": "latest",
     "dayjs": "^1.8.29",
     "lodash-es": "^4.17.15",
     "vue": "^2.6.11",

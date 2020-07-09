@@ -3,6 +3,9 @@ module.exports = {
   env: {
     node: true
   },
+  globals: {
+    wx: true
+  },
   extends: ["@vue/standard", "plugin:zx/custom"],
   rules: {},
   parserOptions: {

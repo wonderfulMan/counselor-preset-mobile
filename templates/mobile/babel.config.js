@@ -14,7 +14,7 @@ module.exports = {
       "import",
       {
         "libraryName": "counselor-mobile-ui",
-        "libraryDirectory": "lib/packages",
+        "libraryDirectory": "lib/es",
         "camel2DashComponentName": false
       }
     ],

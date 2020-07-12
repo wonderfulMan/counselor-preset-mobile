@@ -13,10 +13,11 @@ module.exports = {
     [
       "import",
       {
-        "libraryName": "counselor-mobile-ui",
-        "libraryDirectory": "lib/es",
-        "camel2DashComponentName": false
-      }
+        libraryName: "counselor-mobile-ui",
+        libraryDirectory: "lib/es",
+        style: true
+      },
+      "counselor-mobile-ui"
     ],
     '@babel/plugin-proposal-throw-expressions',
     [

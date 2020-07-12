@@ -79,3 +79,7 @@ exports.addPxToVw = function(chain) {
     .use("counselor-px-to-vw-loader")
     .loader("counselor-px-to-vw-loader");
 };
+
+exports.addTranspileDependencies = function () {
+  return ['counselor-mobile-ui']
+}

@@ -4,7 +4,8 @@ const {
   addSvgSpriteLoader,
   checkEnv,
   addImageMinPlugins,
-  addPxToVw
+  addPxToVw,
+  addTranspileDependencies
 } = require("./scripts/helper");
 
 checkEnv([
@@ -28,5 +29,6 @@ module.exports = {
     // pxtovw
     addPxToVw(chain)
   },
+  transpileDependencies: addTranspileDependencies(),
   devServer: addServer()
 };

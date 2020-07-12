@@ -32,19 +32,15 @@ exports.addAlias = function(chain) {
 };
 // 添加svg分割
 exports.addSvgSpriteLoader = function(chain) {
-  chain.module
-    .rule("svg")
-    .exclude.add(exports.resolve("../src/assets/svg"))
-    .end();
+  const FILE_RE = /\.(vue|js|ts|svg)$/
 
+  chain.module.rule('svg').issuer((file) => !FILE_RE.test(file))
   chain.module
-    .rule("svg-sprite-loader")
+    .rule('svg-sprite')
     .test(/\.svg$/)
-    .include.add(exports.resolve("../src/assets/svg")) // 处理svg目录
-    .end()
-    .use("svg-sprite-loader")
-    .loader("svg-sprite-loader")
-    .options({ symbolId: "icon-[name]" });
+    .issuer((file) => FILE_RE.test(file))
+    .use('svg-sprite')
+    .loader('svg-sprite-loader')
 };
 // 定义本地的.env.development
 exports.addServer = function() {

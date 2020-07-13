@@ -10,7 +10,9 @@ exports.checkEnv = function(vars) {
     vars.forEach(v => {
       if (!process.env[v]) {
         console.error(
-          `请在根目录定义.env.development.local文件定义${vars.join(",")}变量：端口、地址、模块名称`
+          `请在根目录定义.env.development.local文件定义${vars.join(
+            ","
+          )}变量：端口、地址、模块名称`
         );
         process.exit(1);
       }
@@ -32,15 +34,15 @@ exports.addAlias = function(chain) {
 };
 // 添加svg分割
 exports.addSvgSpriteLoader = function(chain) {
-  const FILE_RE = /\.(vue|js|ts|svg)$/
+  const FILE_RE = /\.(vue|js|ts|svg)$/;
 
-  chain.module.rule('svg').issuer((file) => !FILE_RE.test(file))
+  chain.module.rule("svg").issuer(file => !FILE_RE.test(file));
   chain.module
-    .rule('svg-sprite')
+    .rule("svg-sprite")
     .test(/\.svg$/)
-    .issuer((file) => FILE_RE.test(file))
-    .use('svg-sprite')
-    .loader('svg-sprite-loader')
+    .issuer(file => FILE_RE.test(file))
+    .use("svg-sprite")
+    .loader("svg-sprite-loader");
 };
 // 定义本地的.env.development
 exports.addServer = function() {
@@ -54,7 +56,7 @@ exports.addServer = function() {
     port: VUE_APP_DEV_SERVER_PORT,
     proxy: {
       [VUE_APP_DEV_SERVER_MODULE]: {
-        target: VUE_APP_DEV_SERVER_TARGET,
+        target: VUE_APP_DEV_SERVER_TARGET
       }
     }
   };
@@ -80,6 +82,22 @@ exports.addPxToVw = function(chain) {
     .loader("counselor-px-to-vw-loader");
 };
 
-exports.addTranspileDependencies = function () {
-  return ['counselor-mobile-ui']
-}
+exports.addTranspileDependencies = function() {
+  return ["counselor-mobile-ui"];
+};
+
+exports.genBabelImportConfig = function(params) {
+  const config = {
+    libraryName: "counselor-mobile-ui",
+    libraryDirectory: "lib/es"
+  };
+  // 开发环境
+  if (process.env.NODE_ENV === "development") {
+    config.libraryDirectory = "packages";
+  }
+  if (process.env.NODE_ENV === "production") {
+    config.style= true
+  }
+
+  return config
+};

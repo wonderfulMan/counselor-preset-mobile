@@ -78,7 +78,8 @@ module.exports = (api, options, rootOptions) => {
     '.eslintignore': './templates/mobile/.eslintignore',
     '.nvmrc': './templates/mobile/.nvmrc',
     '.postcssrc.js': './templates/mobile/.postcssrc.js',
-    '.env.development.local': './templates/mobile/.env.development.local'
+    '.env.development.local': './templates/mobile/.env.development.local',
+    '.env': './templates/mobile/.env'
   })
   api.postProcessFiles((files) => {
     delete files['src/components/HelloWorld.vue']

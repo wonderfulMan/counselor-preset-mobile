@@ -12,7 +12,7 @@ module.exports = {
     ],
     [
       "import",
-      require("./scripts/help.js").genBabelImportConfig(),
+      require("./scripts/helper.js").genBabelImportConfig(),
       "counselor-mobile-ui"
     ],
     "@babel/plugin-proposal-throw-expressions",

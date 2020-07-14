@@ -54,6 +54,7 @@ exports.addServer = function() {
   return {
     disableHostCheck: true,
     port: VUE_APP_DEV_SERVER_PORT,
+    overlay: false,
     proxy: {
       [VUE_APP_DEV_SERVER_MODULE]: {
         target: VUE_APP_DEV_SERVER_TARGET

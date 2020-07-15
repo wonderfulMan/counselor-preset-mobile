@@ -5,6 +5,7 @@ module.exports = (api, options, rootOptions) => {
       "*.vue"
     ],
     dependencies: {
+      "axios": "^0.19.2",
       "dayjs": "^1.8.29",
       "counselor-mobile-ui": "^1.0.27",
       "lodash-es": "^4.17.15",

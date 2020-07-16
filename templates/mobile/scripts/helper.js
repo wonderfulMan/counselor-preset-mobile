@@ -62,19 +62,19 @@ exports.addServer = function() {
     }
   };
 };
-exports.addImageMinPlugins = function(chain) {
-  chain
-    .plugin("imagemin-webpack-plugin")
-    .use(require("imagemin-webpack-plugin").default, [
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        disable: process.env.NODE_ENV !== "production",
-        pngquant: {
-          quality: "95-100"
-        }
-      }
-    ]);
-};
+// exports.addImageMinPlugins = function(chain) {
+//   chain
+//     .plugin("imagemin-webpack-plugin")
+//     .use(require("imagemin-webpack-plugin").default, [
+//       {
+//         test: /\.(jpe?g|png|gif|svg)$/i,
+//         disable: process.env.NODE_ENV !== "production",
+//         pngquant: {
+//           quality: "95-100"
+//         }
+//       }
+//     ]);
+// };
 exports.addPxToVw = function(chain) {
   chain.module
     .rule("px-to-vw")

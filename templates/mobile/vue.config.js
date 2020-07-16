@@ -3,7 +3,7 @@ const {
   addServer,
   addSvgSpriteLoader,
   checkEnv,
-  addImageMinPlugins,
+  // addImageMinPlugins,
   addPxToVw,
   addTranspileDependencies,
   globalRegisterLess,
@@ -26,7 +26,7 @@ module.exports = {
     // svg sprite
     addSvgSpriteLoader(chain);
     //  image
-    addImageMinPlugins(chain);
+    // addImageMinPlugins(chain);
     // pxtovw
     addPxToVw(chain)
   },

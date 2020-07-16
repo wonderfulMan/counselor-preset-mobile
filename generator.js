@@ -37,7 +37,6 @@ module.exports = (api, options, rootOptions) => {
       "eslint-plugin-promise": "^4.2.1",
       "eslint-plugin-standard": "^4.0.1",
       "eslint-plugin-zx": "^1.1.0",
-      "imagemin-webpack-plugin": "^2.4.2",
       "less": "^3.0.4",
       "less-loader": "^5.0.0",
       "lint-staged": "^9.5.0",
@@ -46,17 +45,16 @@ module.exports = (api, options, rootOptions) => {
       "stylelint": "^13.6.1",
       "stylelint-config-zx": "^1.0.0",
       "svg-sprite-loader": "^5.0.0",
-      "vue-cli-plugin-style-resources-loader": "^0.1.4",
+      "style-resources-loader": "^1.3.2",
       "vue-template-compiler": "^2.6.11"
     },
     "husky": {
       "hooks": {
-        "pre-commit": "type vue-cli-service >/dev/null 2>&1;if [ $? -eq 0 ]; then lint-staged; else exit 0; fi",
-        "commit-msg": "type commitlint >/dev/null 2>&1;if [ $? -eq 0 ]; then commitlint -e $HUSKY_GIT_PARAM; else exit 0; fi"
+        "pre-commit": "lint-staged",
       }
     },
     "lint-staged": {
-      "*.{js,vue}": [
+      "*.{js,jsx,vue}": [
         "yarn lint",
         "git add"
       ],
@@ -74,6 +72,8 @@ module.exports = (api, options, rootOptions) => {
   // 上面的方式不能拷贝隐藏文件
   api.render({
     '.browserslistrc': './templates/mobile/.browserslistrc',
+    '.vscode/settings.json': './templates/mobile/.vscode/settings.json',
+    '.vscode/javascript.code-snippets': './templates/mobile/.vscode/javascript.code-snippets',
     '.editorconfig': './templates/mobile/.editorconfig',
     '.eslintrc.js': './templates/mobile/.eslintrc.js',
     '.gitignore': './templates/mobile/.gitignore',

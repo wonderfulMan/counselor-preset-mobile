@@ -10,7 +10,7 @@ module.exports = (api, options, rootOptions) => {
       "counselor-mobile-ui": "^1.0.27",
       "lodash-es": "^4.17.15",
       "vant": "2.9.0",
-      "vue": "^2.6.11",
+      "vue": "^2.6.11"
       "vue-router": "^3.2.0",
       "vuex": "^3.4.0"
     },
@@ -42,10 +42,11 @@ module.exports = (api, options, rootOptions) => {
       "lint-staged": "^9.5.0",
       "postcss-import": "^12.0.1",
       "postcss-url": "^8.0.0",
+      "style-resources-loader": "^1.3.2",
       "stylelint": "^13.6.1",
       "stylelint-config-zx": "^1.0.0",
       "svg-sprite-loader": "^5.0.0",
-      "style-resources-loader": "^1.3.2",
+      "vue-cli-plugin-style-resources-loader": "^0.1.4",
       "vue-template-compiler": "^2.6.11"
     },
     "husky": {

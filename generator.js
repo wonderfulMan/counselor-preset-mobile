@@ -10,7 +10,7 @@ module.exports = (api, options, rootOptions) => {
       "counselor-mobile-ui": "^1.0.27",
       "lodash-es": "^4.17.15",
       "vant": "2.9.0",
-      "vue": "^2.6.11"
+      "vue": "^2.6.11",
       "vue-router": "^3.2.0",
       "vuex": "^3.4.0"
     },
@@ -55,10 +55,6 @@ module.exports = (api, options, rootOptions) => {
       }
     },
     "lint-staged": {
-      "*.{js,jsx,vue}": [
-        "yarn lint",
-        "git add"
-      ],
       "*.{vue,css}": [
         "stylelint --fix",
         "git add"

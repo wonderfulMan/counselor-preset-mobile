@@ -46,6 +46,7 @@ module.exports = (api, options, rootOptions) => {
       "stylelint": "^13.6.1",
       "stylelint-config-zx": "^1.0.0",
       "svg-sprite-loader": "^5.0.0",
+      "vue-cli-plugin-style-resources-loader": "^0.1.4",
       "vue-template-compiler": "^2.6.11"
     },
     "husky": {

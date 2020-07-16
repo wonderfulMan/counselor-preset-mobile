@@ -102,3 +102,16 @@ exports.genBabelImportConfig = function(params) {
 
   return config
 };
+
+exports.globalRegisterLess = function () {
+  return {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [
+        exports.resolve('../node_modules/counselor-mobile-ui/styles/global.less'),
+        exports.resolve('../node_modules/counselor-mobile-ui/styles/index.less'),
+      ]
+    }
+  }
+}
+

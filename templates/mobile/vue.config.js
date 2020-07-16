@@ -5,7 +5,8 @@ const {
   checkEnv,
   addImageMinPlugins,
   addPxToVw,
-  addTranspileDependencies
+  addTranspileDependencies,
+  globalRegisterLess,
 } = require("./scripts/helper");
 
 checkEnv([
@@ -31,4 +32,7 @@ module.exports = {
   },
   transpileDependencies: addTranspileDependencies(),
   devServer: addServer()
+  pluginOptions: {
+    ...globalRegisterLess()
+  }
 };

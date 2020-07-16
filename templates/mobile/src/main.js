@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import 'counselor-mobile-ui/styles/global.less'
 
 Vue.config.productionTip = false;
 

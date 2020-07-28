@@ -62,6 +62,7 @@ exports.addServer = function() {
     }
   };
 };
+// 图片压缩
 exports.addImageMinPlugins = function(chain) {
   chain
     .plugin("imagemin-webpack-plugin")
@@ -75,6 +76,7 @@ exports.addImageMinPlugins = function(chain) {
       }
     ]);
 };
+// px转换vw
 exports.addPxToVw = function(chain) {
   chain.module
     .rule("px-to-vw")
@@ -82,11 +84,11 @@ exports.addPxToVw = function(chain) {
     .use("counselor-px-to-vw-loader")
     .loader("counselor-px-to-vw-loader");
 };
-
+// babel编译额外包
 exports.addTranspileDependencies = function() {
-  return ["counselor-mobile-ui"];
+  return ["counselor-mobile-ui", "counselor-sdk"];
 };
-
+// 生成babel配置
 exports.genBabelImportConfig = function(params) {
   const config = {
     libraryName: "counselor-mobile-ui",
@@ -102,3 +104,12 @@ exports.genBabelImportConfig = function(params) {
 
   return config
 };
+// cdn资源引入,忽略oss
+exports.genExternals = function (config) {
+  return Object.assign(config, {
+    'OSS': 'OSS',
+    'BMap': 'OSS',
+    "wx": 'true',
+    'mamp': 'true'
+  })
+}

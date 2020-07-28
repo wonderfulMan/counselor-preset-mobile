@@ -4,7 +4,9 @@ module.exports = {
     node: true
   },
   globals: {
-    wx: true
+    wx: true,
+    mamp: true,
+    OSS: true
   },
   extends: ["@vue/standard", "plugin:zx/custom"],
   rules: {},

@@ -5,7 +5,8 @@ const {
   checkEnv,
   addImageMinPlugins,
   addPxToVw,
-  addTranspileDependencies
+  addTranspileDependencies,
+  genExternals
 } = require("./scripts/helper");
 
 checkEnv([
@@ -30,5 +31,9 @@ module.exports = {
     addPxToVw(chain)
   },
   transpileDependencies: addTranspileDependencies(),
-  devServer: addServer()
+  devServer: addServer(),
+  configureWebpack: config => {
+    // externals
+    genExternals(config)
+  }
 };

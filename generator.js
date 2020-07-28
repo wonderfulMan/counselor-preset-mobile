@@ -70,6 +70,7 @@ module.exports = (api, options, rootOptions) => {
   // 上面的方式不能拷贝隐藏文件
   api.render({
     '.browserslistrc': './templates/mobile/.browserslistrc',
+    'public/index.html': './templates/mobile/public/index.html',
     '.vscode/settings.json': './templates/mobile/.vscode/settings.json',
     '.vscode/javascript.code-snippets': './templates/mobile/.vscode/javascript.code-snippets',
     '.editorconfig': './templates/mobile/.editorconfig',

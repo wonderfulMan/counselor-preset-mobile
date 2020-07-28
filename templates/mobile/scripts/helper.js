@@ -113,3 +113,15 @@ exports.genExternals = function (config) {
     'mamp': 'true'
   })
 }
+
+exports.globalRegisterLess = function () {
+  return {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [
+        exports.resolve('../node_modules/counselor-mobile-ui/styles/index.less'),
+      ]
+    }
+  }
+}
+

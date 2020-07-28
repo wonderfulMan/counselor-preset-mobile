@@ -1,0 +1,15 @@
+{
+	"counselor-mobile-ui": {
+		"prefix": "comp",
+		"body": [
+			"import { $1 }  from 'counselor-mobile-ui'"
+		]
+	},
+
+	"counselor-mobile-ui/utils": {
+		"prefix": "util",
+		"body": [
+			"import { $2 }  from 'counselor-mobile-ui/utils/$1'"
+		]
+	},
+}

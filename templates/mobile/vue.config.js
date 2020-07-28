@@ -3,10 +3,11 @@ const {
   addServer,
   addSvgSpriteLoader,
   checkEnv,
-  addImageMinPlugins,
+  // addImageMinPlugins,
   addPxToVw,
   addTranspileDependencies,
-  genExternals
+  genExternals,
+  globalRegisterLess,
 } = require("./scripts/helper");
 
 checkEnv([
@@ -26,7 +27,6 @@ module.exports = {
     // svg sprite
     addSvgSpriteLoader(chain);
     //  image
-    addImageMinPlugins(chain);
     // pxtovw
     addPxToVw(chain)
   },
@@ -35,5 +35,8 @@ module.exports = {
   configureWebpack: config => {
     // externals
     genExternals(config)
+  },
+  pluginOptions: {
+    ...globalRegisterLess()
   }
 };

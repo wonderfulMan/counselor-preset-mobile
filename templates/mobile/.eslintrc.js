@@ -6,7 +6,8 @@ module.exports = {
   globals: {
     wx: true,
     mamp: true,
-    OSS: true
+    OSS: true,
+    BMapLib: true
   },
   extends: ["@vue/standard", "plugin:zx/custom"],
   rules: {},

@@ -3,7 +3,6 @@ const {
   addServer,
   addSvgSpriteLoader,
   checkEnv,
-  // addImageMinPlugins,
   addPxToVw,
   addTranspileDependencies,
   genExternals,

@@ -32,6 +32,7 @@ module.exports = (api, options, rootOptions) => {
       "babel-plugin-import": "^1.13.0",
       "counselor-px-to-vw-loader": "^1.0.1",
       "eslint": "^6.7.2",
+      "postcss-px-to-viewport": "^1.1.1",
       "eslint-plugin-babel": "^5.3.1",
       "eslint-plugin-import": "^2.22.0",
       "eslint-plugin-node": "^11.1.0",

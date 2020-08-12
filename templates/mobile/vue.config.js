@@ -5,7 +5,7 @@ const {
   checkEnv,
   addPxToVw,
   addTranspileDependencies,
-  genExternals,
+  // genExternals,
   globalRegisterLess,
 } = require("./scripts/helper");
 
@@ -31,10 +31,10 @@ module.exports = {
   },
   transpileDependencies: addTranspileDependencies(),
   devServer: addServer(),
-  configureWebpack: config => {
-    // externals
-    genExternals(config)
-  },
+  // configureWebpack: config => {
+  //   // externals
+  //   genExternals(config)
+  // },
   pluginOptions: {
     ...globalRegisterLess()
   }

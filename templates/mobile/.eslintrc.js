@@ -11,6 +11,7 @@ module.exports = {
   },
   extends: ["@vue/standard", "plugin:zx/custom"],
   rules: {},
+  plugins: ['babel'],
   parserOptions: {
     parser: "babel-eslint"
   },

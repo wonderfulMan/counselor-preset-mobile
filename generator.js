@@ -1,21 +1,18 @@
 module.exports = (api, options, rootOptions) => {
-
-
   api.extendPackage({
-    sideEffects: [
-      "*.css",
-      "*.vue"
-    ],
+    sideEffects: ["*.css", "*.vue"],
+    peerDependencies: {
+      "counselor-mobile-ui": "*",
+      "counselor-sdk": "*",
+    },
     dependencies: {
-      "axios": "0.19.2",
-      "dayjs": "1.8.29",
-      "counselor-mobile-ui": "2.1.28",
-      "counselor-sdk": "1.0.58",
+      axios: "0.19.2",
+      dayjs: "1.8.29",
       "lodash-es": "4.17.15",
-      "vant": "2.9.0",
-      "vue": "2.6.11",
+      vant: "2.9.0",
+      vue: "2.6.11",
       "vue-router": "3.2.0",
-      "vuex": "3.4.0"
+      vuex: "3.4.0",
     },
     devDependencies: {
       "@babel/plugin-proposal-class-properties": "7.4.4",
@@ -34,7 +31,7 @@ module.exports = (api, options, rootOptions) => {
       "babel-eslint": "10.1.0",
       "babel-plugin-import": "1.13.0",
       "counselor-px-to-vw-loader": "1.0.1",
-      "eslint": "6.7.2",
+      eslint: "6.7.2",
       "postcss-px-to-viewport": "1.1.1",
       "eslint-plugin-babel": "5.3.1",
       "eslint-plugin-import": "2.22.0",
@@ -42,53 +39,50 @@ module.exports = (api, options, rootOptions) => {
       "eslint-plugin-promise": "4.2.1",
       "eslint-plugin-standard": "4.0.1",
       "eslint-plugin-zx": "1.1.0",
-      "less": "3.0.4",
+      less: "3.0.4",
       "less-loader": "5.0.0",
       "lint-staged": "9.5.0",
       "postcss-import": "12.0.1",
       "postcss-url": "8.0.0",
       "style-resources-loader": "1.3.2",
-      "stylelint": "13.6.1",
+      stylelint: "13.6.1",
       "stylelint-config-zx": "1.0.0",
       "svg-sprite-loader": "5.0.0",
       "vue-cli-plugin-style-resources-loader": "0.1.4",
-      "vue-template-compiler": "2.6.11"
+      "vue-template-compiler": "2.6.11",
     },
-    "husky": {
-      "hooks": {
+    husky: {
+      hooks: {
         "pre-commit": "lint-staged",
-      }
+      },
     },
     "lint-staged": {
-      "*.{vue,css}": [
-        "stylelint --fix",
-        "git add"
-      ]
-    }
+      "*.{vue,css}": ["stylelint --fix", "git add"],
+    },
   });
 
-
-  api.render('./templates/mobile')
+  api.render("./templates/mobile");
   // 无效
   // api.render('./templates/mobile/scripts/helper.js')
   // 上面的方式不能拷贝隐藏文件
   api.render({
-    '.browserslistrc': './templates/mobile/.browserslistrc',
+    ".browserslistrc": "./templates/mobile/.browserslistrc",
     // 'public/index.html': './templates/mobile/public/index.html',
-    '.vscode/settings.json': './templates/mobile/.vscode/settings.json',
-    '.vscode/javascript.code-snippets': './templates/mobile/.vscode/javascript.code-snippets',
-    '.editorconfig': './templates/mobile/.editorconfig',
-    '.eslintrc.js': './templates/mobile/.eslintrc.js',
-    '.gitignore': './templates/mobile/.gitignore',
-    '.eslintignore': './templates/mobile/.eslintignore',
-    '.nvmrc': './templates/mobile/.nvmrc',
-    '.postcssrc.js': './templates/mobile/.postcssrc.js',
-    '.env.development.local': './templates/mobile/.env.development.local',
-    '.env': './templates/mobile/.env'
-  })
+    ".vscode/settings.json": "./templates/mobile/.vscode/settings.json",
+    ".vscode/javascript.code-snippets":
+      "./templates/mobile/.vscode/javascript.code-snippets",
+    ".editorconfig": "./templates/mobile/.editorconfig",
+    ".eslintrc.js": "./templates/mobile/.eslintrc.js",
+    ".gitignore": "./templates/mobile/.gitignore",
+    ".eslintignore": "./templates/mobile/.eslintignore",
+    ".nvmrc": "./templates/mobile/.nvmrc",
+    ".postcssrc.js": "./templates/mobile/.postcssrc.js",
+    ".env.development.local": "./templates/mobile/.env.development.local",
+    ".env": "./templates/mobile/.env",
+  });
   api.postProcessFiles((files) => {
-    delete files['src/components/HelloWorld.vue']
-    delete files['src/assets/logo.png']
-    delete files['public/favicon.ico']
-  })
-}
+    delete files["src/components/HelloWorld.vue"];
+    delete files["src/assets/logo.png"];
+    delete files["public/favicon.ico"];
+  });
+};

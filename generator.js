@@ -79,6 +79,7 @@ module.exports = (api, options, rootOptions) => {
     ".postcssrc.js": "./templates/mobile/.postcssrc.js",
     ".env.development.local": "./templates/mobile/.env.development.local",
     ".env": "./templates/mobile/.env",
+    "prod.sh": "./templates/mobile/prod.sh",
   });
   api.postProcessFiles((files) => {
     delete files["src/components/HelloWorld.vue"];
